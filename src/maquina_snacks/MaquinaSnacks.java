@@ -78,7 +78,7 @@ public class MaquinaSnacks {
         var ticket = "*** Ticket de venta ***";
         var total = 0.0;
         for (var producto: productos){
-            ticket += "\n\t-" + producto.getNombre() + " - $" + producto.getPrecio();
+            ticket += "\n\t- " + producto.getNombre() + " - $" + producto.getPrecio();
             total = total + producto.getPrecio();
         }
         ticket += "\n\tTotal -> $" + total;
