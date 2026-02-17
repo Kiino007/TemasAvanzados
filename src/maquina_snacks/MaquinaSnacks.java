@@ -44,4 +44,33 @@ public class MaquinaSnacks {
         //LEEMOS Y RETORNAMOS LA OPCION SELECCIONADA
         return Integer.parseInt(consola.nextLine());
     }
+
+    private static boolean ejecutarOpciones(int opcion, Scanner consola, List<Snack> productos){
+        var salir = false;
+        switch (opcion){
+            case 1 -> comprarSnack(consola, productos);
+            case 2 -> mostrarTicket()
+        }
+        return salir;
+    }
+
+    private static void comprarSnack(Scanner consola, List<Snack> productos){
+        System.out.print("Que snack quieres comprar (id)? ");
+        vas idSnack = Integer.parseInt(consola.nextLine());
+
+        //VALIDAR QUE EL SNACK EXISTA EN LA LISTA DE SNACKS
+        var snackEncontrado = false;
+        for(var snack: Snacks.getSnacks()){
+            if(idSnack == snack.getIdSnak()){
+                //AGREGAMOS EL SNACK A LA LISTA DE PRODUCTOS
+                productos.add(snack);
+                System.out.println("Ok, snack agragado: " + snack);
+                snackEncontrado = true;
+                break;
+            }
+        }
+        if(!snackEncontrado){
+            System.out.println("Id de snack no encontrado: " + idSnack);k
+        }
+    }
 }
