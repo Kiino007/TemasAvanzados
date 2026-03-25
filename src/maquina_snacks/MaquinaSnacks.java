@@ -14,7 +14,7 @@ public class MaquinaSnacks {
         var consola = new Scanner(System.in);
 
         //CREAMOS LA LISTA DE PRODUCTOS TIPO SNACK
-        List<Snack> productos new ArrayList<>();
+        List<Snack> productos = new ArrayList<>();
         System.out.println("*** Maquina de Snacks ***");
 
         //MOSTRAR EL INVENTARIO DE SNAKCS DISPONIBLES
@@ -23,7 +23,7 @@ public class MaquinaSnacks {
         while(!salir){
             try {
                 var opcion = mostrarMenu(consola);
-                salir = ejecutarOpciones(opcion, consola, productos)
+                salir = ejecutarOpciones(opcion, consola, productos);
             } catch (Exception e) {
                 System.out.println("Ocurrio un error: " + e.getMessage());
             }
@@ -62,7 +62,7 @@ public class MaquinaSnacks {
 
     private static void comprarSnack(Scanner consola, List<Snack> productos){
         System.out.print("Que snack quieres comprar (id)? ");
-        vas idSnack = Integer.parseInt(consola.nextLine());
+        var idSnack = Integer.parseInt(consola.nextLine());
 
         //VALIDAR QUE EL SNACK EXISTA EN LA LISTA DE SNACKS
         var snackEncontrado = false;
@@ -76,7 +76,7 @@ public class MaquinaSnacks {
             }
         }
         if(!snackEncontrado){
-            System.out.println("Id de snack no encontrado: " + idSnack);k
+            System.out.println("Id de snack no encontrado: " + idSnack);
         }
     }
 

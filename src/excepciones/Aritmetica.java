@@ -1,4 +1,4 @@
-package Excepciones;
+package excepciones;
 
 public class Aritmetica {
     public static int division(int numerador, int denominador) {
