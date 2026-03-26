@@ -1,4 +1,7 @@
-package maquina_snacks_archivos;
+package maquina_snacks_archivos.presentacion;
+
+import maquina_snacks_archivos.dominio.Snack;
+import maquina_snacks_archivos.servicio.Snacks;
 
 import java.util.ArrayList;
 import java.util.List;
