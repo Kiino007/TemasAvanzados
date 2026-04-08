@@ -5,7 +5,7 @@ import maquina_snacks_archivos.dominio.Snack;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Snacks {
+public class ServicioSnacksLista implements IServicioSnacks{
     private static final List<Snack> snacks;
 
     //BLOQUE STATIC INICIALIZADOR
@@ -17,12 +17,12 @@ public class Snacks {
     }
 
     //SE AGREGA EL METODO DE AGREGAR SNACK
-    public static void agregarSnack(Snack snack){
+    public void agregarSnack(Snack snack){
         snacks.add(snack);
     }
 
     //SE AGREGA EL METODO DE MOSTRAR LOS SNACKS
-    public static void mostrarSnack(){
+    public void mostrarSnack(){
         var inventarioSnacks = "";
         for(var snack : snacks){
             inventarioSnacks += snack.toString() + "\n";
@@ -32,7 +32,7 @@ public class Snacks {
     }
 
     //METODO PARA REGRESAR LA LISTA DE OBJETOS TIPO SNACK
-    public static List<Snack> getSnacks(){
+    public List<Snack> getSnacks(){
         return snacks;
     }
 }
