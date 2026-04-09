@@ -53,7 +53,16 @@ public class ServicioSnacksArchivos implements IServicioSnacks {
 
     private void agregarSnackArchivo(Snack snack) {
         boolean anexar = false;
-        
+        var archivo = new File(NOMBRE_ARCHIVO);
+        try{
+            anexar = archivo.exists();
+            var salida = new PrintWriter(new FileWriter(archivo, anexar));
+            salida.println(snack);
+            salida.close();//se escribe la informacion en el archivo y no se queda en memoria
+
+        }catch (Exception e){
+            System.out.println("Error al agregar snack" + e.getMessage());
+        }
     }
 
     @Override
