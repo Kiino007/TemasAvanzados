@@ -5,13 +5,13 @@ import java.util.Objects;
 
 public class Snack implements Serializable {
     private static int contadorSnacks = 0;
-    private int idSnak;
+    private int idSnack;
     private String nombre;
     private double precio;
 
     // CONSTRUCTOR VACÍO
     public Snack(){
-        this.idSnak = ++Snack.contadorSnacks;
+        this.idSnack = ++Snack.contadorSnacks;
     }
 
     // CONSTRUCTOR CON ARGUMENTOS
@@ -27,8 +27,8 @@ public class Snack implements Serializable {
         return contadorSnacks;
     }
 
-    public int getIdSnak() {
-        return this.idSnak;
+    public int getIdSnack() {
+        return this.idSnack;
     }
 
     public String getNombre() {
@@ -53,10 +53,14 @@ public class Snack implements Serializable {
         // Este metodo define cómo se verá el objeto cuando lo imprimas (ej. System.out.println(miSnack))
         // Devuelve una cadena de texto con los valores actuales de los atributos
         return "Snack{" +
-                "idSnak=" + idSnak +
+                "idSnack=" + idSnack +
                 ", nombre='" + nombre + '\'' +
                 ", precio=" + precio +
                 '}';
+    }
+
+    public String escribirSnack(){
+        return idSnack + "," + nombre + "," + precio;
     }
 
     //
@@ -70,7 +74,7 @@ public class Snack implements Serializable {
 
         // 3. Comparación lógica: Dos snacks son iguales solo si coinciden su ID, su precio y su nombre
         // Se usa Objects.equals para el nombre para evitar errores si el texto es nulo
-        return idSnak == snack.idSnak && Double.compare(precio, snack.precio) == 0 && Objects.equals(nombre, snack.nombre);
+        return idSnack == snack.idSnack && Double.compare(precio, snack.precio) == 0 && Objects.equals(nombre, snack.nombre);
     }
 
     @Override
@@ -78,6 +82,6 @@ public class Snack implements Serializable {
         // Genera un número entero único (ID matemático) basado en los atributos del objeto
         // Es vital para que el objeto funcione correctamente en Mapas (HashMap) o Sets (HashSet)
         // Si dos objetos son iguales según equals(), deben devolver el mismo hashCode
-        return Objects.hash(idSnak, nombre, precio);
+        return Objects.hash(idSnack, nombre, precio);
     }
 }

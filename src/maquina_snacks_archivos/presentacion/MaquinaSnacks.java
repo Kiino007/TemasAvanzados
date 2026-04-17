@@ -75,7 +75,7 @@ public class MaquinaSnacks {
         //VALIDAR QUE EL SNACK EXISTA EN LA LISTA DE SNACKS
         var snackEncontrado = false;
         for(var snack: servicioSnacks.getSnacks()){
-            if(idSnack == snack.getIdSnak()){
+            if(idSnack == snack.getIdSnack()){
                 //AGREGAMOS EL SNACK A LA LISTA DE PRODUCTOS
                 productos.add(snack);
                 System.out.println("Ok, snack agragado: " + snack);
